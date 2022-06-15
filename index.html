@@ -19,4 +19,34 @@
 	</body>
 	<script type = "text/javascript" src = "./libs/PhotoGalleryLib.js"></script>
 	<script type = "text/javascript" src = "./js/app.js"></script>
+	<script type="text/javascript"> 
+		/* 鼠标特效 */
+		var a_idx = 0; 
+		jQuery(document).ready(function($) { 
+			$("body").click(function(e) { 
+				var a = new Array("在忙吗", "还是在", "摸鱼", "让我看看", "哇", "好大一条", "hey yo", "what's up", "busy?", "or just dawdling ?", "be my guest", "wow", "what a day!"); 
+				var $i = $("<span/>").text(a[a_idx]); 
+				a_idx = (a_idx + 1) % a.length; 
+				var x = e.pageX, 
+				y = e.pageY; 
+				$i.css({ 
+					"z-index": 999999999999999999999999999999999999999999999999999999999999999999999, 
+					"top": y - 20, 
+					"left": x, 
+					"position": "absolute", 
+					"font-weight": "bold", 
+					"color": "#ff6651" 
+				}); 
+				$("body").append($i); 
+				$i.animate({ 
+					"top": y - 180, 
+					"opacity": 0 
+				}, 
+				1500, 
+				function() { 
+					$i.remove(); 
+				}); 
+			}); 
+		}); 
+		</script>
 </html>
