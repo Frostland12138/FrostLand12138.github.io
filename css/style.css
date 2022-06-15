@@ -1,0 +1,47 @@
+.header
+{
+	color: red;
+	font-size: 45px;
+}
+.maintitle
+{
+	color:  blue;
+	text-align: center;
+}
+.mainBody
+{
+	width: 100%;
+	/* display: flex; */
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+img
+{
+	/* width: 222px; */
+	max-height: 100%;
+	max-width: 100%;
+	cursor: pointer;
+}
+td > img:hover
+{
+	box-shadow: 0 0 30px #515151;
+	transform: scale(1.1);
+	border: solid 2px;
+}
+table
+{
+	margin-left: auto;
+	margin-right: auto; 
+	border: 1px solid;
+	border-collapse: collapse;
+	border: none;
+}
+td
+{
+	border: solid #000 1px;
+}
+#imagesTable
+{
+	text-align: center;
+}
