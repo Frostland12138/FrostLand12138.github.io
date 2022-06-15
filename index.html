@@ -20,45 +20,34 @@
 	<script type = "text/javascript" src = "./libs/PhotoGalleryLib.js"></script>
 	<script type = "text/javascript" src = "./js/app.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript">
-		/* 鼠标点击特效 */
-
-		jQuery(function () {
-		$("html").click(function(e) {
-			var a_idx = Math.floor((Math.random() * 26));
-			var a = new Array("在忙吗", "还是在", "摸鱼", "让我看看", "哇", "好大一条", "hey yo", "what's up", "busy?", "or just dawdling ?", "be my guest", "wow", "what a day!"); 
-			var color1 = Math.floor((Math.random() * 255));
-			var color2 = Math.floor((Math.random() * 255));
-			var color3 = Math.floor((Math.random() * 255));
-
-			var $i = $("<span />").text(a[a_idx]);
-			a_idx = (a_idx + 1) % a.length;
-			var x = e.pageX,
-				y = e.pageY;
-			$i.css({　　　　　　
-				"z-index": 9999999999999 ,
-				"top": y - 20,
-				"left": x,
-				"position": "absolute",
-				"font-family":"mmm",
-				"fontSize":Math.floor((Math.random() * 22)+15),
-				"font-weight": "bold",
-				"color": "rgb("+color1+","+color2+","+color3+")",
-				"-webkit-user-select":"none",
-				"-moz-user-select":"none",
-				"-ms-user-select":"none",
-				"user-select":"none",
-			});
-			$("body").append($i);
-			$i.animate({
-					"top": y - 200,
-					"opacity": 0
-				},
-				1000,
-				function() {
-					$i.remove();
-				});
-		});
-	});
+	<script type="text/javascript"> 
+		/* 鼠标特效 */
+		var a_idx = 0; 
+		jQuery(document).ready(function($) { 
+			$("body").click(function(e) { 
+				var a = new Array("在忙吗", "还是在", "摸鱼", "让我看看", "哇", "好大一条", "hey yo", "what's up", "busy?", "or just dawdling ?", "be my guest", "wow", "what a day!"); 
+				var $i = $("<span/>").text(a[a_idx]); 
+				a_idx = (a_idx + 1) % a.length; 
+				var x = e.pageX, 
+				y = e.pageY; 
+				$i.css({ 
+					"z-index": 999999999999999999999999999999999999999999999999999999999999999999999, 
+					"top": y - 20, 
+					"left": x, 
+					"position": "absolute", 
+					"font-weight": "bold", 
+					"color": "#ff6651" 
+				}); 
+				$("body").append($i); 
+				$i.animate({ 
+					"top": y - 180, 
+					"opacity": 0 
+				}, 
+				1500, 
+				function() { 
+					$i.remove(); 
+				}); 
+			}); 
+		}); 
 		</script>
 </html>
